@@ -144,6 +144,7 @@ nav a:focus {
 .container{
   display: grid; 
   grid-template-columns: 1fr 5fr 1fr;
+  /* grid-template-columns: auto auto auto; */
   gap: 15px; 
 }
 
@@ -159,13 +160,14 @@ img {
 }
 
 #about, #method, #clients, #contact {
-  grid-column: 2/4;
-  display: inline-block;
+  /* grid-column: 2/span 1; */
+  /* display: inline-block; */
   text-align: left;
 }
 
 #about {
   grid-row: 2/3;
+  /* align-self: auto; */
 }
 
 #method {
@@ -180,6 +182,25 @@ img {
   grid-row: 5/6;
 }
 
+
+.about.text-block {
+  grid-row: 2/3;
+  align-items: auto;
+}
+
+.method.text-block {
+  grid-row: 3/4;
+}
+
+.clients.text-block {
+  grid-row: 4/5; 
+}
+
+.contact.text-block {
+  grid-row: 5/6;
+}
+
+
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 
@@ -187,8 +208,24 @@ first div in the grid  and place it in the grid. */
   max-height: 600px;
   grid-column: 1/-1;
   overflow: hidden;
+
 }
 
+/* .about-image {
+  grid-row: 2/3; 
+}
+
+.method-image {
+  grid-row: 3/4; 
+}
+
+.clients-image {
+  grid-row: 4/5; 
+}
+
+.contact-image {
+  grid-row: 5/6; 
+} */
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
  four rows in the grid. */
@@ -201,6 +238,9 @@ first div in the grid  and place it in the grid. */
   max-height: 250px;
   text-align: justify;
   overflow: hidden; 
+  grid-column: 2/span 1;
+  margin: auto; 
+
 }
 
 /* Add your media query here */
@@ -209,6 +249,12 @@ first div in the grid  and place it in the grid. */
   
   img {
     width: 100%; 
+    height: 100%;
+  }
+
+  .text-block {
+    height: 65%; 
+    margin: auto; 
   }
 
   /* Step 9: Write the selector/rule property to style the nav element */
